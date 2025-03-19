@@ -13,6 +13,7 @@ interface HeroProps {
   backgroundImage?: string;
   className?: string;
   services?: string[];
+  seoDescription?: string;
 }
 
 const Hero = ({ 
@@ -23,7 +24,8 @@ const Hero = ({
   fullHeight = true,
   backgroundImage = "/hero-bg.jpg",
   className,
-  services = ["schilderwerk", "stucwerk", "voegwerk", "sloopwerk", "allround kluswerk"]
+  services = ["schilderwerk", "stucwerk", "voegwerk", "sloopwerk", "allround kluswerk"],
+  seoDescription
 }: HeroProps) => {
   const [currentService, setCurrentService] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
@@ -94,16 +96,28 @@ const Hero = ({
           <div className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-in-up min-h-16"
                style={{animationDelay: '0.3s'}}
           >
-            <p className="mb-2">Waar ben jij naar op zoek?</p>
-            <div className="font-bold text-white flex justify-center items-center min-h-12">
-              <span className="mr-2">Professioneel</span>
-              <span className="text-white relative border-r-2 border-white pr-1 h-8 inline-flex items-center">
-                {displayText}
-                <span className={`absolute top-0 right-0 h-full w-1 bg-white ${isTyping ? 'animate-pulse' : 'opacity-0'}`}></span>
-              </span>
-              <span className="ml-2">in Rotterdam en Den Haag</span>
-            </div>
+            {subtitle ? (
+              <p>{subtitle}</p>
+            ) : (
+              <>
+                <p className="mb-2">Waar ben jij naar op zoek?</p>
+                <div className="font-bold text-white flex justify-center items-center min-h-12">
+                  <span className="mr-2">Professioneel</span>
+                  <span className="text-white relative border-r-2 border-white pr-1 h-8 inline-flex items-center">
+                    {displayText}
+                    <span className={`absolute top-0 right-0 h-full w-1 bg-white ${isTyping ? 'animate-pulse' : 'opacity-0'}`}></span>
+                  </span>
+                  <span className="ml-2">in Rotterdam en Den Haag</span>
+                </div>
+              </>
+            )}
           </div>
+          
+          {seoDescription && (
+            <div className="sr-only" aria-hidden="true">
+              <p>{seoDescription}</p>
+            </div>
+          )}
           
           <div className="animate-fade-in-up" style={{animationDelay: '0.5s'}}>
             <Link
