@@ -1,5 +1,4 @@
-
-import { Brush, Hammer, Home, Wrench, Award, Clock, CreditCard } from 'lucide-react';
+import { Brush, Hammer, Home, Wrench, Award, Clock, CreditCard, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
