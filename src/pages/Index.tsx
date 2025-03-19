@@ -5,6 +5,8 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import ServiceCard from '@/components/ServiceCard';
 import ProjectGallery from '@/components/ProjectGallery';
+import HourlyRatesUSP from '@/components/HourlyRatesUSP';
+import CallToActionBanner from '@/components/CallToActionBanner';
 import { cn } from '@/lib/utils';
 
 const features = [
@@ -76,16 +78,23 @@ const Index = () => {
         <Hero 
           title="Vakkundige kluswerkzaamheden voor een scherpe prijs"
           subtitle="Schilderwerk, stucwerk, voegwerk, sloopwerk en meer in Rotterdam, Den Haag en omgeving"
+          backgroundImage="/hero-bg.jpg"
+          ctaText="Vraag een offerte aan"
+          ctaLink="/contact"
         />
+        
+        {/* USP Section with hourly rates */}
+        <HourlyRatesUSP />
         
         {/* Features Section */}
         <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="inline-block px-3 py-1 text-xs font-medium bg-onward/10 text-onward rounded-full mb-3">
+              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full mb-3"
+                    style={{ backgroundColor: "#1c9688", color: "white" }}>
                 Waarom ON-WARD?
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1c9688" }}>
                 Kwaliteit en betrouwbaarheid staan voorop
               </h2>
               <p className="text-lg text-muted-foreground">
@@ -99,12 +108,13 @@ const Index = () => {
                   key={index} 
                   className="glass-card rounded-xl p-6 text-center hover-lift"
                 >
-                  <div className="w-16 h-16 bg-onward/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <div className="text-onward">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                       style={{ backgroundColor: "#a8d2cd30", color: "#1c9688" }}>
+                    <div>
                       {feature.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2" style={{ color: "#1c9688" }}>{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.description}</p>
                 </div>
               ))}
@@ -112,14 +122,18 @@ const Index = () => {
           </div>
         </section>
         
+        {/* Compelling Call To Action */}
+        <CallToActionBanner />
+        
         {/* Services Section */}
         <section className="py-16 md:py-24 bg-service-pattern">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="inline-block px-3 py-1 text-xs font-medium bg-onward/10 text-onward rounded-full mb-3">
+              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full mb-3"
+                    style={{ backgroundColor: "#1c9688", color: "white" }}>
                 Onze diensten
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1c9688" }}>
                 Wat kunnen we voor u betekenen?
               </h2>
               <p className="text-lg text-muted-foreground">
@@ -143,39 +157,11 @@ const Index = () => {
             <div className="text-center mt-12">
               <Link
                 to="/services"
-                className="inline-flex items-center justify-center px-6 py-3 bg-onward text-white font-medium rounded-md shadow-sm hover:bg-onward-light focus-transition"
+                className="inline-flex items-center justify-center px-6 py-3 text-white font-medium rounded-md shadow-sm hover:bg-opacity-90 focus-transition"
+                style={{ backgroundColor: "#1c9688" }}
               >
                 Bekijk al onze diensten
               </Link>
-            </div>
-          </div>
-        </section>
-        
-        {/* CTA Section */}
-        <section className="py-16 md:py-24 bg-onward">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Op zoek naar een vakkundige partner voor uw volgende klus?
-              </h2>
-              <p className="text-lg text-white/90 mb-8">
-                Neem contact met ons op voor een vrijblijvende offerte of advies op maat.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-onward text-base font-medium rounded-md shadow-sm hover:bg-gray-100 focus-transition"
-                >
-                  Vraag een offerte aan
-                </Link>
-                <a
-                  href="tel:+31612345678"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-transparent border border-white text-white text-base font-medium rounded-md shadow-sm hover:bg-white/10 focus-transition"
-                >
-                  <Phone className="mr-2 h-5 w-5" />
-                  Bel direct: +31 6 12345678
-                </a>
-              </div>
             </div>
           </div>
         </section>
@@ -184,10 +170,11 @@ const Index = () => {
         <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="inline-block px-3 py-1 text-xs font-medium bg-onward/10 text-onward rounded-full mb-3">
+              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full mb-3"
+                    style={{ backgroundColor: "#1c9688", color: "white" }}>
                 Onze projecten
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1c9688" }}>
                 Recente werkzaamheden
               </h2>
               <p className="text-lg text-muted-foreground">
@@ -200,13 +187,14 @@ const Index = () => {
         </section>
         
         {/* Testimonials */}
-        <section className="py-16 md:py-24 bg-onward-gray">
+        <section className="py-16 md:py-24" style={{ backgroundColor: "#f5f9f9" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="inline-block px-3 py-1 text-xs font-medium bg-onward/10 text-onward rounded-full mb-3">
+              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full mb-3"
+                    style={{ backgroundColor: "#1c9688", color: "white" }}>
                 Tevreden klanten
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1c9688" }}>
                 Wat onze klanten zeggen
               </h2>
               <p className="text-lg text-muted-foreground">
@@ -216,13 +204,13 @@ const Index = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[1, 2, 3].map((i) => (
-                <div key={i} className="glass-card rounded-xl p-6 hover-lift">
+                <div key={i} className="glass-card rounded-xl p-6 hover-lift border" style={{ borderColor: "#a8d2cd30" }}>
                   <div className="flex items-center mb-4">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <svg 
                         key={star} 
-                        className="w-5 h-5 text-yellow-400" 
-                        fill="currentColor" 
+                        className="w-5 h-5" 
+                        fill="#1c9688" 
                         viewBox="0 0 20 20"
                       >
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -247,14 +235,15 @@ const Index = () => {
           </div>
         </section>
         
-        {/* Contact CTA */}
+        {/* Final Call to Action */}
         <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-              <span className="inline-block px-3 py-1 text-xs font-medium bg-onward/10 text-onward rounded-full mb-3">
+              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full mb-3"
+                    style={{ backgroundColor: "#1c9688", color: "white" }}>
                 Klaar om te beginnen?
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1c9688" }}>
                 Neem vandaag nog contact met ons op
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
@@ -262,7 +251,8 @@ const Index = () => {
               </p>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 bg-onward text-white text-base font-medium rounded-md shadow-sm hover:bg-onward-light focus-transition"
+                className="inline-flex items-center justify-center px-6 py-3 text-white text-base font-medium rounded-md shadow-sm hover:bg-opacity-90 focus-transition"
+                style={{ backgroundColor: "#1c9688" }}
               >
                 Gratis advies & offerte
               </Link>
