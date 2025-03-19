@@ -77,10 +77,16 @@ const Index = () => {
       <main>
         <Hero 
           title="Vakkundige kluswerkzaamheden voor een scherpe prijs"
-          subtitle="Schilderwerk, stucwerk, voegwerk, sloopwerk en meer in Rotterdam, Den Haag en omgeving"
           backgroundImage="/hero-bg.jpg"
           ctaText="Vraag een offerte aan"
           ctaLink="/contact"
+          services={[
+            "schilderwerk", 
+            "stucwerk", 
+            "voegwerk", 
+            "sloopwerk", 
+            "allround kluswerk"
+          ]}
         />
         
         {/* USP Section with hourly rates */}
